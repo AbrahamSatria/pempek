@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pempek Tojotojo - The best Authentic from Lubuklinggau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #800000;
+        --secondary: #228b22;
+        --accent: #ffd700;
+        --light: #fff;
+        --dark: #333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        overflow-x: hidden;
+        background-color: #f8f9fa;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Noto Serif", serif;
+        font-weight: 700;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--primary);
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: var(--light);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+      }
+
+      nav ul li a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent);
+      }
+
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons a {
+        color: var(--light);
+        margin-left: 15px;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: var(--accent);
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        color: var(--light);
+        cursor: pointer;
+      }
+
+      /* User Menu Styles */
+      .user-menu {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .user-btn {
+        background: var(--accent);
+        color: var(--primary);
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+      }
+
+      .user-btn:hover {
+        background: var(--light);
+        transform: translateY(-2px);
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: var(--light);
+        margin: 5% auto;
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        animation: modalFadeIn 0.3s;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark);
+      }
+
+      .close:hover {
+        color: var(--primary);
+      }
+
+      /* Form Styles */
+      .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--dark);
+        font-size: 0.95rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background-color: var(--light);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      /* Quantity input dengan tombol +/- */
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .quantity-btn {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--primary);
+        background: var(--light);
+        color: var(--primary);
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+
+      .quantity-btn:hover {
+        background: var(--primary);
+        color: var(--light);
+      }
+
+      .quantity-input {
+        width: 60px;
+        text-align: center;
+        font-weight: 600;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 8px;
+      }
+
+      /* Radio button group untuk penyajian */
+      .serving-options {
+        display: flex;
+        gap: 15px;
+        margin-top: 5px;
+      }
+
+      .serving-option {
+        flex: 1;
+      }
+
+      .serving-option input[type="radio"] {
+        display: none;
+      }
+
+      .serving-option label {
+        display: block;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+
+      .serving-option input[type="radio"]:checked + label {
+        border-color: var(--primary);
+        background-color: rgba(128, 0, 0, 0.1);
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* Modal form title */
+      .modal-content h2 {
+        color: var(--primary);
+        margin-bottom: 25px;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+
+      /* Submit button styling */
+      .modal-content .btn {
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      /* Error message styling */
+      .error-message {
+        color: #dc3545;
+        font-size: 0.85rem;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .form-group.error input,
+      .form-group.error select,
+      .form-group.error textarea {
+        border-color: #dc3545;
+      }
+
+      .form-group.error .error-message {
+        display: block;
+      }
+
+      /* Success message */
+      .success-message {
+        background: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #28a745;
+      }
+
+      /* Info message */
+      .info-message {
+        background: #d1ecf1;
+        color: #0c5460;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #17a2b8;
+      }
+
+      /* Order History Styles */
+      .order-item {
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .order-code {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .order-status {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+      }
+
+      .status-pending {
+        background-color: #fff3cd;
+        color: #856404;
+      }
+
+      .status-completed {
+        background-color: #d1edff;
+        color: #004085;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://static.vecteezy.com/system/resources/previews/005/218/447/original/palembang-s-pempek-logo-template-illustration-free-vector.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--light);
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--primary);
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        animation: fadeIn 1.5s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--light);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn:disabled:hover {
+        background-color: #cccccc;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background-color: #5a6268;
+      }
+
+      .btn-link {
+        background: none;
+        color: var(--primary);
+        text-decoration: underline;
+        padding: 0;
+        margin-top: 15px;
+      }
+
+      .btn-link:hover {
+        background: none;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* About Section */
+      .about {
+        padding: 100px 0;
+        background-color: #f9f9f9;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 3px;
+        background-color: var(--accent);
+        margin: 10px auto;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Menu Section */
+      .menu {
+        padding: 100px 0;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .menu-card {
+        background-color: var(--light);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        position: relative;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .menu-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .menu-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .menu-card:hover .menu-image img {
+        transform: scale(1.1);
+      }
+
+      .menu-info {
+        padding: 20px;
+      }
+
+      .menu-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .menu-price {
+        font-weight: 600;
+        color: var(--secondary);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      /* Login Required Overlay */
+      .login-required {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+
+      .menu-card:hover .login-required {
+        opacity: 1;
+      }
+
+      .login-required i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      /* Location Section */
+      .location {
+        padding: 100px 0;
+        background-color: #f9f9f9;
+      }
+
+      .location-content {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+      }
+
+      .location-info {
+        flex: 1;
+      }
+
+      .location-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .location-info p {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .location-info i {
+        margin-right: 10px;
+        color: var(--primary);
+      }
+
+      .map {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 100px 0;
+      }
+
+      .contact-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .contact-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--primary);
+        text-decoration: none;
+        transition: transform 0.3s;
+      }
+
+      .contact-icon:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-icon i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .whatsapp-btn {
+        background-color: var(--secondary);
+        color: var(--light);
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #1e7a1e;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary);
+        color: var(--light);
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo span {
+        color: var(--accent);
+      }
+
+      .footer-social {
+        margin-bottom: 20px;
+      }
+
+      .footer-social a {
+        color: var(--light);
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: var(--accent);
+      }
+
+      .copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s, transform 0.6s;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Form Tabs */
+      .form-tabs {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .form-tab {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        background: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: #666;
+      }
+
+      .form-tab.active {
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary);
+      }
+
+      .form-tab:hover {
+        color: var(--primary);
+      }
+
+      .form-content {
+        display: none;
+      }
+
+      .form-content.active {
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .about-content,
+        .location-content {
+          flex-direction: column;
+        }
+
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          background-color: var(--primary);
+          padding: 20px;
+          transition: left 0.3s;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        .social-icons {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .contact-icons {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .user-menu {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .serving-options {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .modal-content {
+          padding: 20px;
+          margin: 10% auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">Pempek <span>Tojotojo</span></a>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#menu">Menu Pempek</a></li>
+            <li><a href="#location">Lokasi</a></li>
+            <li><a href="#contact">Kontak</a></li>
+            <li class="user-menu" id="userMenu" style="display: none">
+              <button class="user-btn" id="orderHistoryBtn">
+                <i class="fas fa-history"></i> Riwayat
+              </button>
+              <button class="user-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </li>
+            <li class="user-menu" id="loginMenu">
+              <button class="user-btn" id="loginBtn">
+                <i class="fas fa-user"></i> Login
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/pempektojotojo?utm_source=ig_web_button_share_sheet&igsh=MWhrdWdnNXBidXB6NA=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@pempek.tojo.tojo?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Login/Register Modal -->
+    <div id="authModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Akun Pempek Tojotojo</h2>
+
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="login">Login</button>
+          <button class="form-tab" data-tab="register">Daftar</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="form-content active">
+          <form id="loginFormElement">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                placeholder="Masukkan username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Masukkan password"
+              />
+            </div>
+            <button type="submit" class="btn">Login</button>
+          </form>
+          <div
+            style="
+              margin-top: 20px;
+              padding: 15px;
+              background: #f8f9fa;
+              border-radius: 5px;
+            "
+          >
+            <p style="margin: 0; font-size: 0.9rem; color: #666">
+              <strong>Demo Account:</strong><br />
+              Username: customer<br />
+              Password: password123
+            </p>
+          </div>
+        </div>
+
+        <!-- Register Form -->
+        <div id="registerForm" class="form-content">
+          <form id="registerFormElement">
+            <div class="form-group">
+              <label for="regName">Nama Lengkap:</label>
+              <input
+                type="text"
+                id="regName"
+                name="regName"
+                required
+                placeholder="Masukkan nama lengkap"
+              />
+            </div>
+            <div class="form-group">
+              <label for="regPhone">No. WhatsApp:</label>
+              <input
+                type="tel"
+                id="regPhone"
+                name="regPhone"
+                required
+                placeholder="Contoh: 081234567890"
+              />
+            </div>
+            <div class="form-group">
+              <label for="regUsername">Username:</label>
+              <input
+                type="text"
+                id="regUsername"
+                name="regUsername"
+                required
+                placeholder="Pilih username"
+              />
+              <div class="error-message" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+              <label for="regPassword">Password:</label>
+              <input
+                type="password"
+                id="regPassword"
+                name="regPassword"
+                required
+                placeholder="Buat password"
+              />
+              <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+              <label for="regConfirmPassword">Konfirmasi Password:</label>
+              <input
+                type="password"
+                id="regConfirmPassword"
+                name="regConfirmPassword"
+                required
+                placeholder="Ulangi password"
+              />
+              <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+            <button type="submit" class="btn">Daftar Sekarang</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pesan Pempek</h2>
+
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="customerName">Nama Pemesan:</label>
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              required
+              placeholder="Masukkan nama lengkap"
+            />
+            <div class="error-message" id="customerNameError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">No. WhatsApp:</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              name="customerPhone"
+              required
+              placeholder="Contoh: 081234567890"
+            />
+            <div class="error-message" id="customerPhoneError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="menuItem">Pilih Menu:</label>
+            <select id="menuItem" name="menuItem" required>
+              <option value="">-- Pilih Menu --</option>
+              <option value="Pempek Kapal Selam">
+                Pempek Kapal Selam - Rp 25.000
+              </option>
+              <option value="Pempek Adaan">Pempek Adaan - Rp 9.700</option>
+              <option value="Pempek Kulit">Pempek Kulit - Rp 9.700</option>
+              <option value="Pempek Lenjer">Pempek Lenjer - Rp 9.700</option>
+              <option value="Pempek Telor">Pempek Telor - Rp 9.700</option>
+            </select>
+            <div class="error-message" id="menuItemError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Jumlah:</label>
+            <div class="quantity-control">
+              <button
+                type="button"
+                class="quantity-btn"
+                onclick="decreaseQuantity()"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="1"
+                required
+                class="quantity-input"
+              />
+              <button
+                type="button"
+                class="quantity-btn"
+                onclick="increaseQuantity()"
+              >
+                +
+              </button>
+            </div>
+            <div class="error-message" id="quantityError"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Penyajian:</label>
+            <div class="serving-options">
+              <div class="serving-option">
+                <input
+                  type="radio"
+                  id="frozen"
+                  name="servingType"
+                  value="Frozen"
+                  checked
+                />
+                <label for="frozen">❄️ Frozen</label>
+              </div>
+              <div class="serving-option">
+                <input
+                  type="radio"
+                  id="siapSantap"
+                  name="servingType"
+                  value="Siap Santap"
+                />
+                <label for="siapSantap">🍽️ Siap Santap</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Catatan Tambahan:</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              placeholder="Contoh: Level pedas, tambah cuko, tanpa bawang, dll."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> Pesan Sekarang
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order History Modal -->
+    <div id="orderHistoryModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Riwayat Pesanan</h2>
+        <div id="orderHistory"></div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>Pempek Tojotojo</h1>
+        <p>The best Authentic from Lubuklinggau</p>
+        <button class="btn" id="heroOrderBtn">Pesan Sekarang</button>
+        <p style="margin-top: 15px; font-size: 0.9rem">
+          Belum punya akun?
+          <button class="btn-link" onclick="openAuthModal('register')">
+            Daftar di sini
+          </button>
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tentang Kami</h2>
+        </div>
+        <div class="about-content fade-in">
+          <div class="about-text">
+            <h3>Sejarah Pempek Tojotojo</h3>
+            <p>
+              Pempek Tojotojo didirikan pada tahun 1995 oleh Bapak Ahmad dan Ibu
+              Siti, pasangan asli Palembang yang memiliki kecintaan mendalam
+              terhadap kuliner tradisional. Bermula dari warung kecil di
+              pinggiran kota, kini Pempek Tojotojo telah menjadi salah satu
+              destinasi favorit bagi pecinta pempek di Palembang.
+            </p>
+            <p>
+              Kami berkomitmen untuk menjaga keaslian cita rasa pempek Palembang
+              dengan menggunakan bahan-bahan pilihan dan resep turun-temurun
+              yang telah diwariskan selama beberapa generasi.
+            </p>
+            <h3>Visi & Misi</h3>
+            <p>
+              <strong>Visi:</strong> Menjadi rumah pempek terdepan yang
+              melestarikan cita rasa autentik Palembang.
+            </p>
+            <p>
+              <strong>Misi:</strong> Menyajikan pempek berkualitas tinggi dengan
+              bahan-bahan terbaik dan menjaga resep tradisional yang telah
+              teruji selama puluhan tahun.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/005/218/447/original/palembang-s-pempek-logo-template-illustration-free-vector.jpg"
+              alt="Dapur Pempek Tojotojo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-title">
+          <h2>Menu Pempek</h2>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card fade-in">
+            <div class="menu-image">
+              <img
+                src="https://tse4.mm.bing.net/th/id/OIP.5MEX4g-5zOHCptaiq5eU7wHaFP?pid=Api&P=0&h=220"
+                alt="Pempek Kapal Selam"
+              />
+            </div>
+            <div class="menu-info">
+              <h3>Pempek Kapal Selam</h3>
+              <p class="menu-price">Rp 25.000</p>
+              <button
+                class="btn order-btn"
+                data-menu="Pempek Kapal Selam"
+                data-price="25000"
+              >
+                Pesan Sekarang
+              </button>
+            </div>
+            <div class="login-required">
+              <i class="fas fa-lock"></i>
+              <p>Login untuk memesan</p>
+              <button
+                class="btn"
+                style="margin-top: 10px"
+                onclick="openAuthModal('login')"
+              >
+                Login Sekarang
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-image">
+              <img
+                src="https://paxelmarket.co/wp-content/uploads/2022/02/96-20211015233453-Edit-600x600.jpg"
+                alt="Pempek Adaan"
+              />
+            </div>
+            <div class="menu-info">
+              <h3>Pempek Adaan</h3>
+              <p class="menu-price">Rp 9.700</p>
+              <button
+                class="btn order-btn"
+                data-menu="Pempek Adaan"
+                data-price="9700"
+              >
+                Pesan Sekarang
+              </button>
+            </div>
+            <div class="login-required">
+              <i class="fas fa-lock"></i>
+              <p>Login untuk memesan</p>
+              <button
+                class="btn"
+                style="margin-top: 10px"
+                onclick="openAuthModal('login')"
+              >
+                Login Sekarang
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-image">
+              <img
+                src="https://fs.genpi.co/uploads/news/2019/01/10/822919377cfd2531162213a8ca457477.jpg"
+                alt="Pempek Kulit"
+              />
+            </div>
+            <div class="menu-info">
+              <h3>Pempek Kulit</h3>
+              <p class="menu-price">Rp 9.700</p>
+              <button
+                class="btn order-btn"
+                data-menu="Pempek Kulit"
+                data-price="9700"
+              >
+                Pesan Sekarang
+              </button>
+            </div>
+            <div class="login-required">
+              <i class="fas fa-lock"></i>
+              <p>Login untuk memesan</p>
+              <button
+                class="btn"
+                style="margin-top: 10px"
+                onclick="openAuthModal('login')"
+              >
+                Login Sekarang
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-image">
+              <img
+                src="https://www.agoraliarecipes.com/wp-content/uploads/2022/06/AR00042-11.jpg"
+                alt="Pempek Lenjer"
+              />
+            </div>
+            <div class="menu-info">
+              <h3>Pempek Lenjer</h3>
+              <p class="menu-price">Rp 9.700</p>
+              <button
+                class="btn order-btn"
+                data-menu="Pempek Lenjer"
+                data-price="9700"
+              >
+                Pesan Sekarang
+              </button>
+            </div>
+            <div class="login-required">
+              <i class="fas fa-lock"></i>
+              <p>Login untuk memesan</p>
+              <button
+                class="btn"
+                style="margin-top: 10px"
+                onclick="openAuthModal('login')"
+              >
+                Login Sekarang
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-image">
+              <img
+                src="https://live.staticflickr.com/5083/5326090035_7c2ac2d41d_b.jpg"
+                alt="Pempek Telor"
+              />
+            </div>
+            <div class="menu-info">
+              <h3>Pempek Telor</h3>
+              <p class="menu-price">Rp 9.700</p>
+              <button
+                class="btn order-btn"
+                data-menu="Pempek Telor"
+                data-price="9700"
+              >
+                Pesan Sekarang
+              </button>
+            </div>
+            <div class="login-required">
+              <i class="fas fa-lock"></i>
+              <p>Login untuk memesan</p>
+              <button
+                class="btn"
+                style="margin-top: 10px"
+                onclick="openAuthModal('login')"
+              >
+                Login Sekarang
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+      <div class="container">
+        <div class="section-title">
+          <h2>Lokasi Toko</h2>
+        </div>
+        <div class="location-content fade-in">
+          <div class="location-info">
+            <h3>Kunjungi Kami</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Bungur VIII, Punggawan,
+              Kec. Banjarsari, Kota Surakarta,Jawa Tengah (57132)
+            </p>
+            <p><i class="fas fa-clock"></i> Setiap hari 09.00–21.00</p>
+            <p><i class="fas fa-phone"></i> 0895-6110-67777</p>
+            <p><i class="fas fa-envelope"></i> info@pempektojotojo.com</p>
+            <p>
+              Kami berada di pusat kota Solo, mudah dijangkau dari berbagai
+              arah. Area parkir yang luas tersedia untuk kenyamanan Anda.
+            </p>
+          </div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1260955666435!2d110.81481667319044!3d-7.561228074666574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17c3532cd28f%3A0xca40a727142c9959!2sPempek%20Tojo%20Tojo!5e0!3m2!1sid!2sid!4v1760355246121!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kontak & Sosial Media</h2>
+        </div>
+        <div class="contact-content fade-in">
+          <p>
+            Terhubung dengan kami melalui media sosial atau hubungi langsung
+            untuk pemesanan dan informasi lebih lanjut.
+          </p>
+          <div class="contact-icons">
+            <a
+              href="https://www.instagram.com/pempektojotojo?utm_source=ig_web_button_share_sheet&igsh=MWhrdWdnNXBidXB6NA=="
+              class="contact-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@pempek.tojo.tojo?is_from_webapp=1&sender_device=pc"
+              class="contact-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-tiktok"></i>
+              <span>TikTok</span>
+            </a>
+          </div>
+          <button class="btn whatsapp-btn" id="whatsappBtn">
+            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+          </button>
+          <p style="margin-top: 15px; font-size: 0.9rem">
+            Belum punya akun?
+            <button class="btn-link" onclick="openAuthModal('register')">
+              Daftar di sini
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">Pempek <span>Tojotojo</span></div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="copyright">
+            © 2025 Pempek Tojotojo. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Data pengguna (disimpan di localStorage)
+      const initializeData = () => {
+        if (!localStorage.getItem("users")) {
+          const users = [
+            {
+              username: "customer",
+              password: "password123",
+              name: "Demo Customer",
+              phone: "081234567890",
+              registeredAt: new Date().toISOString(),
+            },
+            {
+              username: "admin",
+              password: "admin123",
+              name: "Administrator",
+              phone: "081234567891",
+              registeredAt: new Date().toISOString(),
+            },
+          ];
+          localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        if (!localStorage.getItem("orders")) {
+          localStorage.setItem("orders", JSON.stringify([]));
+        }
+      };
+
+      // Login System
+      const authModal = document.getElementById("authModal");
+      const orderModal = document.getElementById("orderModal");
+      const orderHistoryModal = document.getElementById("orderHistoryModal");
+      const loginBtn = document.getElementById("loginBtn");
+      const logoutBtn = document.getElementById("logoutBtn");
+      const orderHistoryBtn = document.getElementById("orderHistoryBtn");
+      const userMenu = document.getElementById("userMenu");
+      const loginMenu = document.getElementById("loginMenu");
+      const closeButtons = document.querySelectorAll(".close");
+      const orderButtons = document.querySelectorAll(".order-btn");
+      const loginFormElement = document.getElementById("loginFormElement");
+      const registerFormElement = document.getElementById(
+        "registerFormElement"
+      );
+      const orderForm = document.getElementById("orderForm");
+      const heroOrderBtn = document.getElementById("heroOrderBtn");
+      const whatsappBtn = document.getElementById("whatsappBtn");
+      const formTabs = document.querySelectorAll(".form-tab");
+
+      // Check if user is logged in
+      function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (isLoggedIn && currentUser) {
+          userMenu.style.display = "flex";
+          loginMenu.style.display = "none";
+          updateOrderButtons(true);
+
+          // Auto-fill user data in order form
+          const users = JSON.parse(localStorage.getItem("users"));
+          const user = users.find((u) => u.username === currentUser);
+          if (user) {
+            document.getElementById("customerName").value = user.name;
+            document.getElementById("customerPhone").value = user.phone;
+          }
+        } else {
+          userMenu.style.display = "none";
+          loginMenu.style.display = "flex";
+          updateOrderButtons(false);
+        }
+      }
+
+      // Update order buttons based on login status
+      function updateOrderButtons(isLoggedIn) {
+        const orderButtons = document.querySelectorAll(".order-btn");
+        const loginRequiredOverlays =
+          document.querySelectorAll(".login-required");
+
+        if (isLoggedIn) {
+          orderButtons.forEach((btn) => {
+            btn.disabled = false;
+            btn.innerHTML = "Pesan Sekarang";
+          });
+          loginRequiredOverlays.forEach((overlay) => {
+            overlay.style.display = "none";
+          });
+        } else {
+          orderButtons.forEach((btn) => {
+            btn.disabled = true;
+            btn.innerHTML = "Login untuk Memesan";
+          });
+          loginRequiredOverlays.forEach((overlay) => {
+            overlay.style.display = "flex";
+          });
+        }
+      }
+
+      // Modal functions
+      function openModal(modal) {
+        modal.style.display = "block";
+      }
+
+      function openAuthModal(tab = "login") {
+        openModal(authModal);
+        switchTab(tab);
+      }
+
+      function closeModal(modal) {
+        modal.style.display = "none";
+      }
+
+      // Switch between login and register tabs
+      function switchTab(tabName) {
+        // Update tabs
+        formTabs.forEach((tab) => {
+          if (tab.dataset.tab === tabName) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+
+        // Update forms
+        document.querySelectorAll(".form-content").forEach((form) => {
+          if (form.id === tabName + "Form") {
+            form.classList.add("active");
+          } else {
+            form.classList.remove("active");
+          }
+        });
+      }
+
+      // Event Listeners
+      loginBtn.addEventListener("click", () => openAuthModal("login"));
+      orderHistoryBtn.addEventListener("click", () => {
+        displayOrderHistory();
+        openModal(orderHistoryModal);
+      });
+      logoutBtn.addEventListener("click", logout);
+
+      heroOrderBtn.addEventListener("click", () => {
+        if (!localStorage.getItem("isLoggedIn")) {
+          alert("Silakan login terlebih dahulu untuk memesan!");
+          openAuthModal("login");
+          return;
+        }
+        openModal(orderModal);
+      });
+
+      whatsappBtn.addEventListener("click", () => {
+        if (!localStorage.getItem("isLoggedIn")) {
+          alert("Silakan login terlebih dahulu untuk memesan via WhatsApp!");
+          openAuthModal("login");
+          return;
+        }
+        window.open(
+          "https://wa.me/62895611067777?text=Halo,%20saya%20ingin%20memesan%20pempek",
+          "_blank"
+        );
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const modal = this.closest(".modal");
+          closeModal(modal);
+        });
+      });
+
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          if (!localStorage.getItem("isLoggedIn")) {
+            alert("Silakan login terlebih dahulu untuk memesan!");
+            openAuthModal("login");
+            return;
+          }
+          const menuItem = this.getAttribute("data-menu");
+          document.getElementById("menuItem").value = menuItem;
+          openModal(orderModal);
+        });
+      });
+
+      // Form tabs event listeners
+      formTabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          switchTab(this.dataset.tab);
+        });
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) {
+          closeModal(e.target);
+        }
+      });
+
+      // Login Form Handler
+      loginFormElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const users = JSON.parse(localStorage.getItem("users"));
+        const user = users.find(
+          (u) => u.username === username && u.password === password
+        );
+
+        if (user) {
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("currentUser", username);
+          closeModal(authModal);
+          checkLoginStatus();
+          alert("Login berhasil! Selamat datang " + username);
+          loginFormElement.reset();
+        } else {
+          alert("Username atau password salah!");
+        }
+      });
+
+      // Register Form Handler
+      registerFormElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("regName").value.trim();
+        const phone = document.getElementById("regPhone").value.trim();
+        const username = document.getElementById("regUsername").value.trim();
+        const password = document.getElementById("regPassword").value;
+        const confirmPassword =
+          document.getElementById("regConfirmPassword").value;
+
+        // Clear previous errors
+        clearRegisterErrors();
+
+        // Validation
+        let isValid = true;
+
+        if (name.length < 3) {
+          showRegisterError("usernameError", "Nama harus minimal 3 karakter");
+          isValid = false;
+        }
+
+        if (!/^[0-9+\-\s()]{10,}$/.test(phone)) {
+          showRegisterError(
+            "usernameError",
+            "Format nomor telepon tidak valid"
+          );
+          isValid = false;
+        }
+
+        if (username.length < 3) {
+          showRegisterError(
+            "usernameError",
+            "Username harus minimal 3 karakter"
+          );
+          isValid = false;
+        }
+
+        // Check if username already exists
+        const users = JSON.parse(localStorage.getItem("users"));
+        if (users.find((u) => u.username === username)) {
+          showRegisterError("usernameError", "Username sudah digunakan");
+          isValid = false;
+        }
+
+        if (password.length < 6) {
+          showRegisterError(
+            "passwordError",
+            "Password harus minimal 6 karakter"
+          );
+          isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+          showRegisterError(
+            "confirmPasswordError",
+            "Konfirmasi password tidak cocok"
+          );
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Create new user
+        const newUser = {
+          username: username,
+          password: password,
+          name: name,
+          phone: phone,
+          registeredAt: new Date().toISOString(),
+        };
+
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        // Auto login after registration
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUser", username);
+        closeModal(authModal);
+        checkLoginStatus();
+
+        alert("Pendaftaran berhasil! Selamat datang " + username);
+        registerFormElement.reset();
+      });
+
+      function clearRegisterErrors() {
+        document.getElementById("usernameError").style.display = "none";
+        document.getElementById("passwordError").style.display = "none";
+        document.getElementById("confirmPasswordError").style.display = "none";
+      }
+
+      function showRegisterError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+      }
+
+      // Quantity control functions
+      function increaseQuantity() {
+        const quantityInput = document.getElementById("quantity");
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+      }
+
+      function decreaseQuantity() {
+        const quantityInput = document.getElementById("quantity");
+        if (parseInt(quantityInput.value) > 1) {
+          quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+      }
+
+      // Form validation for order
+      function validateOrderForm() {
+        let isValid = true;
+        const customerName = document
+          .getElementById("customerName")
+          .value.trim();
+        const customerPhone = document
+          .getElementById("customerPhone")
+          .value.trim();
+        const menuItem = document.getElementById("menuItem").value;
+        const quantity = document.getElementById("quantity").value;
+
+        // Clear previous errors
+        document.querySelectorAll(".error-message").forEach((error) => {
+          error.style.display = "none";
+        });
+        document.querySelectorAll(".form-group").forEach((group) => {
+          group.classList.remove("error");
+        });
+
+        // Validate customer name
+        if (!customerName) {
+          showError("customerNameError", "Nama pemesan harus diisi");
+          isValid = false;
+        }
+
+        // Validate phone number
+        if (!customerPhone) {
+          showError("customerPhoneError", "Nomor WhatsApp harus diisi");
+          isValid = false;
+        } else if (!/^[0-9+\-\s()]{10,}$/.test(customerPhone)) {
+          showError("customerPhoneError", "Format nomor telepon tidak valid");
+          isValid = false;
+        }
+
+        // Validate menu item
+        if (!menuItem) {
+          showError("menuItemError", "Silakan pilih menu");
+          isValid = false;
+        }
+
+        // Validate quantity
+        if (!quantity || quantity < 1) {
+          showError("quantityError", "Jumlah harus minimal 1");
+          isValid = false;
+        }
+
+        return isValid;
+      }
+
+      function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+        errorElement.parentElement.classList.add("error");
+      }
+
+      // Order Form Handler
+      orderForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!localStorage.getItem("isLoggedIn")) {
+          alert("Silakan login terlebih dahulu!");
+          openAuthModal("login");
+          return;
+        }
+
+        // Validate form
+        if (!validateOrderForm()) {
+          return;
+        }
+
+        const formData = new FormData(orderForm);
+        const servingType = document.querySelector(
+          'input[name="servingType"]:checked'
+        ).value;
+
+        const orderData = {
+          id: generateOrderId(),
+          customerName: formData.get("customerName"),
+          customerPhone: formData.get("customerPhone"),
+          menuItem: formData.get("menuItem"),
+          quantity: formData.get("quantity"),
+          servingType: servingType,
+          notes: formData.get("notes"),
+          status: "pending",
+          orderDate: new Date().toLocaleString("id-ID"),
+          customer: localStorage.getItem("currentUser"),
+        };
+
+        const orders = JSON.parse(localStorage.getItem("orders"));
+        orders.push(orderData);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        // Send WhatsApp message
+        const message = `Halo Pempek Tojotojo, saya ingin memesan:
+
+🍽️ *DETAIL PESANAN*
+Nama: ${orderData.customerName}
+Telepon: ${orderData.customerPhone}
+Menu: ${orderData.menuItem}
+Jumlah: ${orderData.quantity}
+Penyajian: ${orderData.servingType}
+Catatan: ${orderData.notes || "-"}
+
+📦 *KODE PESANAN*: ${orderData.id}
+
+Terima kasih! 🎉`;
+
+        const whatsappUrl = `https://wa.me/62895611067777?text=${encodeURIComponent(
+          message
+        )}`;
+        window.open(whatsappUrl, "_blank");
+
+        // Show success message
+        const successMessage = document.createElement("div");
+        successMessage.className = "success-message";
+        successMessage.innerHTML = `
+                <strong>✅ Pesanan Berhasil!</strong><br>
+                Kode Pesanan: <strong>${orderData.id}</strong><br>
+                Pesanan telah dikirim via WhatsApp.
+            `;
+
+        orderForm.parentNode.insertBefore(successMessage, orderForm);
+        orderForm.reset();
+
+        // Reset to default values
+        document.getElementById("quantity").value = 1;
+        document.getElementById("frozen").checked = true;
+
+        // Auto-fill user data again
+        checkLoginStatus();
+
+        // Remove success message after 5 seconds and close modal
+        setTimeout(() => {
+          if (successMessage.parentNode) {
+            successMessage.parentNode.removeChild(successMessage);
+          }
+          closeModal(orderModal);
+        }, 5000);
+      });
+
+      // Display Order History
+      function displayOrderHistory() {
+        const orderHistory = document.getElementById("orderHistory");
+        const orders = JSON.parse(localStorage.getItem("orders"));
+        const currentUser = localStorage.getItem("currentUser");
+
+        // Jika admin, tampilkan semua pesanan. Jika customer, hanya pesanan mereka
+        const userOrders =
+          currentUser === "admin"
+            ? orders
+            : orders.filter((order) => order.customer === currentUser);
+
+        if (userOrders.length === 0) {
+          orderHistory.innerHTML = "<p>Belum ada pesanan.</p>";
+          return;
+        }
+
+        orderHistory.innerHTML = userOrders
+          .map(
+            (order) => `
+                <div class="order-item">
+                    <div>
+                        <strong class="order-code">${order.id}</strong> 
+                        <span class="order-status status-${order.status}">${
+              order.status
+            }</span>
+                    </div>
+                    <div><strong>${order.menuItem}</strong> (${
+              order.quantity
+            }x) - ${order.servingType}</div>
+                    <div>Nama: ${order.customerName} | Telp: ${
+              order.customerPhone
+            }</div>
+                    <div>Tanggal: ${order.orderDate}</div>
+                    ${order.notes ? `<div>Catatan: ${order.notes}</div>` : ""}
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      // Logout Function
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("currentUser");
+        checkLoginStatus();
+        alert("Logout berhasil!");
+      }
+
+      // Generate Order ID
+      function generateOrderId() {
+        return (
+          "ORDER-" +
+          Date.now() +
+          "-" +
+          Math.random().toString(36).substr(2, 5).toUpperCase()
+        );
+      }
+
+      // Mobile Menu Toggle
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const nav = document.querySelector("nav");
+
+      mobileMenu.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll("nav ul li a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
+
+      // Scroll animations
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const fadeInOnScroll = () => {
+        fadeElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add("visible");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", fadeInOnScroll);
+      window.addEventListener("load", fadeInOnScroll);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Initialize
+      initializeData();
+      checkLoginStatus();
+    </script>
+  </body>
+</html>
